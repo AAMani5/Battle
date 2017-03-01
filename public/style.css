@@ -1,0 +1,16 @@
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}​
+
+body {
+    background-color: pink;
+}
+
+#go {
+    border: solid 1px #CCC;
+    height: 25px;
+    width: 115px;
+    color: blue;
+}
