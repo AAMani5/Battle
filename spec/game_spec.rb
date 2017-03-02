@@ -18,4 +18,10 @@ describe Game do
     expect(player2).to receive(:gets_attacked)
     game.attack(player2)
   end
+
+  it "allows games to switch turns" do
+    game.switch
+    expect(game.player1).to eq player2
+    expect(game.player2).to eq player1
+  end
 end
