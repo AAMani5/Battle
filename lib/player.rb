@@ -12,8 +12,4 @@ class Player
     @hit_points -= DEFAULT_PENALTY
   end
 
-  def attack(player)
-    player.gets_attacked
-  end
-
 end

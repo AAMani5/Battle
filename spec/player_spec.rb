@@ -11,11 +11,6 @@ describe Player do
     expect(player1.hit_points).to eq Player::DEFAULT_HP
   end
 
-  it "allow dave to attack mittens" do
-    expect(player2).to receive(:gets_attacked)
-    player1.attack(player2)
-  end
-
   it "deducts hit points by 10" do
     attack = -Player::DEFAULT_PENALTY
     expect{player1.gets_attacked}.to change {player1.hit_points}.by attack
