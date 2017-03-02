@@ -13,15 +13,15 @@ describe Game do
     expect(game.player2).to eq player2
   end
 
-  it "allow dave to attack mittens" do
+  it "allow players to attach each ther" do
     allow(player2).to receive(:gets_attacked)
     expect(player2).to receive(:gets_attacked)
     game.attack(player2)
   end
 
-  it "allows games to switch turns" do
+  it "allows players to switch turns" do
     game.switch
-    expect(game.player1).to eq player2
-    expect(game.player2).to eq player1
+    expect(game.current_player).to eq player2
+    expect(game.opponent_player).to eq player1
   end
 end

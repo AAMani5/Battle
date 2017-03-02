@@ -1,7 +1,10 @@
 class Game
-  attr_reader :players
+  attr_reader :players, :current_player, :opponent_player
+  
   def initialize(player1, player2)
     @players = [player1, player2]
+    @current_player = player1
+    @opponent_player = player2
   end
 
   def player1
@@ -18,7 +21,8 @@ class Game
   end
 
   def switch
-    players[0],players[1] = players[1],players[0]
+    @opponent_player = @current_player
+    @current_player = players.select{|player| player != current_player}.first
   end
 
 end
