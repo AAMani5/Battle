@@ -1,8 +1,8 @@
-<p><%= $game.player1.name %>: <%= $game.player1.hit_points %>HP</p>
-<p><%= $game.player2.name %>: <%= $game.player2.hit_points %>HP</p>
+<p><%= @game.player1.name %>: <%= @game.player1.hit_points %>HP</p>
+<p><%= @game.player2.name %>: <%= @game.player2.hit_points %>HP</p>
 
-<% if $game.over?%>
-  <p><%=$game.loser.name%>: Good Luck next time!</p>
+<% if @game.over?%>
+  <p><%=@game.loser.name%>: Good Luck next time!</p>
   <form id="re_entry" action="/" method="GET">
     <input type="submit" value="re-try" id ="go"/>
   </form>
