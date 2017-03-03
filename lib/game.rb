@@ -7,6 +7,14 @@ class Game
     @opponent_player = player2
   end
 
+  def self.instance
+    @game
+  end
+
+  def self.create(player1, player2)
+    @game = Game.new(player1,player2)
+  end
+
   def player1
     players.first
   end
