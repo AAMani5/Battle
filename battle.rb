@@ -23,5 +23,10 @@ class Battle < Sinatra::Base
     erb (:attack)
   end
 
+  post '/okay' do
+    $game.switch
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end

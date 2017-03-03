@@ -1,6 +1,13 @@
-<p><%= $game.player2.name %>: <%= $game.player2.hit_points %>HP</p>
 <p><%= $game.player1.name %>: <%= $game.player1.hit_points %>HP</p>
+<p><%= $game.player2.name %>: <%= $game.player2.hit_points %>HP</p>
 
-<form id="name_entry" action="/play" method="GET">
-  <input type="submit" value="okay" id ="go"/>
-</form>
+<% if $game.over?%>
+  <p><%=$game.loser.name%>: Good Luck next time!</p>
+  <form id="re_entry" action="/" method="GET">
+    <input type="submit" value="re-try" id ="go"/>
+  </form>
+<% else %>
+  <form id="switch_turns" action="/okay" method="POST">
+    <input type="submit" value="okay" id ="go"/>
+  </form>
+<% end %>
